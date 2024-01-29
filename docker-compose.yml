@@ -1,0 +1,24 @@
+version: '3.0'
+
+services:
+  nginx_cont:
+    image: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - /home/ec2user/nginx:/dir1
+
+  mysql_cont:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=secretpass
+    volumes:
+      - /home/ec2-user/sql:/dir2
+
+  jenkins_cont:
+    image: jenkins/jenkins
+    ports:
+      - "8080:8080"
+    volumes:
+      - /home/ec2-user/jenkins:/dir3
+      
