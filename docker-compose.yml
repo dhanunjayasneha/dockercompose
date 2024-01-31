@@ -1,0 +1,31 @@
+version: '3.0'
+services:
+    python_cont:
+      image: python
+      ports:
+        - "8000:8000"
+      volumes: 
+        - /home/ec2-user/python:/dir1
+
+    ubuntu_cont:
+      image: ubuntu:20.04
+      volumes:
+        - /home/ec2-user/ubuntu1:/dir2
+
+    redis_cont:
+      image: redis
+      ports:
+        - "6379:6379"
+      volumes:
+        - /home/ec2-user/redis1:/dir3
+
+    maven:
+      image: maven
+      ports:
+        - "8080:8080"
+      volumes:
+        - /home/ec2-user/maven1:/dir4
+
+
+
+
